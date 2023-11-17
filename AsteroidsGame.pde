@@ -7,6 +7,7 @@ boolean dTurn = false;
 boolean aTurn = false;
 boolean game = true;
 boolean control = true;
+int controlCount = 0;
 
 public void setup(){
   enterprise = new Spaceship();
@@ -44,24 +45,32 @@ public void draw(){
     enterprise.turn(-10);
   }
   }else{//control check end
-  
+    enterprise.turn(-2);
+    controlCount++;
   }//no control end
+  
+  if(controlCount>500){
+    control=true;
+  }//controlCount check end
+  
   }//game over check end
 }
 
 public void keyPressed(){
-  if(key=='e'){
-    enterprise.hyperspace();
-  }
-  if(key=='w'){
-    accelerate = true;
-  }
-  if(key=='a'){
-    aTurn = true;
-  }
-  if(key=='d'){
-    dTurn = true;
-  }
+  if(control==true){
+    if(key=='e'){
+      enterprise.hyperspace();
+    }
+    if(key=='w'){
+      accelerate = true;
+    }
+    if(key=='a'){
+      aTurn = true;
+    }
+    if(key=='d'){
+      dTurn = true;
+    }
+  }//control check end
 }
 
 public void keyReleased(){
