@@ -11,6 +11,10 @@ class SpeedBar extends Bar{
    public void overheat(){
      if(myMeasure>100){
        control = false;
+       controlCount = 0;
+       enterprise.hyperspace();
+       enterprise.setXspeed((int)(Math.random()*2));
+       enterprise.setYspeed((int)(Math.random()*2));
      }
    }
    
@@ -23,7 +27,5 @@ class SpeedBar extends Bar{
      
      myR = (int)myMeasure*5;
      myG = 800/(int)(myMeasure+1);
-     
-     System.out.println(myMeasure);
    }
 }
