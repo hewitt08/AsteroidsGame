@@ -3,9 +3,10 @@ class Bar{
   protected double myMeasure;
    
    public void show(){
-     noStroke();
+     stroke(255);
      fill(0,0,0);
-     rect(myX, myY, 80, 20);
+     rect(myX-1, myY-1, 100, 21);
+     noStroke();
      fill(myR, myG, myB);
      rect(myX, myY, (int)myMeasure, 20);
    }
