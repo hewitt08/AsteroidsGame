@@ -20,3 +20,4 @@ class Star //note that this class does NOT extend Floater
     triangle(myX-(size/2), myY-(size/2), myX-(size+size/3), myY, myX-(size/2), myY+(size/2));//left triangle
   }
 }
+
