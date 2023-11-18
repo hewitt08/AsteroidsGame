@@ -2,7 +2,7 @@ Spaceship enterprise;
 Star[] stars;
 SpeedBar speed;
 
-boolean accelerate = false;
+boolean accelerateB = false;
 boolean dTurn = false;
 boolean aTurn = false;
 boolean game = true;
@@ -35,7 +35,7 @@ public void draw(){
   enterprise.move();
   
   if(control==true){
-  if(accelerate == true){
+  if(accelerateB == true){
     enterprise.accelerate(0.5);
   }
   if(aTurn == true){
@@ -62,7 +62,7 @@ public void keyPressed(){
       enterprise.hyperspace();
     }
     if(key=='w'){
-      accelerate = true;
+      accelerateB = true;
     }
     if(key=='a'){
       aTurn = true;
@@ -75,7 +75,7 @@ public void keyPressed(){
 
 public void keyReleased(){
   if(key=='w'){
-    accelerate = false;
+    accelerateB = false;
   }
   if(key=='a'){
     aTurn = false;
