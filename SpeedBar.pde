@@ -20,9 +20,9 @@ class SpeedBar extends Bar{
    
    public void setSpeedBar(){
      if(enterprise.getXspeed()>enterprise.getYspeed()){
-       myMeasure = abs((float)enterprise.getXspeed());
+       myMeasure = Math.abs((float)enterprise.getXspeed());
      }else{
-       myMeasure = abs((float)enterprise.getYspeed());
+       myMeasure = Math.abs((float)enterprise.getYspeed());
      }
      
      myR = (int)myMeasure*5;
