@@ -49,7 +49,7 @@ public void draw(){
     controlCount++;
   }//no control end
   
-  if(controlCount>500){
+  if(controlCount>200){
     control=true;
   }//controlCount check end
   
