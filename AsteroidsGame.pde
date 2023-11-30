@@ -1,6 +1,7 @@
 Spaceship enterprise;
 Star[] stars;
 SpeedBar speed;
+ArrayList <Asteroid> roids;
 
 boolean accelerateB = false;
 boolean dTurn = false;
@@ -12,6 +13,11 @@ int controlCount = 0;
 public void setup(){
   enterprise = new Spaceship();
   speed = new SpeedBar(20, 20, 0,100,30);
+  
+  roids = new ArrayList <Asteroid>();
+  for(int i = 0; i < 10; i++)
+    roids.add(new Asteroid());
+  
   size(500,500);
   stars = new Star[80];
   for(int i = 0; i < stars.length; i++){
@@ -52,6 +58,18 @@ public void draw(){
   if(controlCount>200){
     control=true;
   }//controlCount check end
+  
+  for(int i = 0; i < roids.size(); i++){
+    roids.get(i).show();
+    roids.get(i).move();
+    
+  }//roids for loop end move and show
+  
+  for(int i = 0; i < roids.size(); i++){
+    if(dist((float)roids.get(i).myCenterX, (float)roids.get(i).myCenterY, (float)enterprise.myCenterX, (float)enterprise.myCenterY)<10){
+      roids.remove(i);
+    }//distance check end
+  }//roids for loop end distance check
   
   }//game over check end
 }
