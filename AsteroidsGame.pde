@@ -12,10 +12,9 @@ int controlCount = 0;
 
 public void setup(){
   enterprise = new Spaceship();
-  speed = new SpeedBar(20, 20, 0,100,30);
   
-  roids = new ArrayList <Asteroid> ();
-  for(int i = 0; i < 10; i++)
+  roids = new ArrayList <Asteroid>();
+  for(int i = 0; i < 100; i++)
     roids.add(new Asteroid());
   
   size(500,500);
@@ -23,6 +22,8 @@ public void setup(){
   for(int i = 0; i < stars.length; i++){
     stars[i] = new Star((int)(Math.random()*500), (int)(Math.random()*500));
   }
+  
+  speed = new SpeedBar(20, 20, 0,100,30);
 }
 
 public void draw(){
@@ -32,10 +33,6 @@ public void draw(){
   for(int i = 0; i < stars.length; i++){
     stars[i].show();
   }
-  
-  speed.setSpeedBar();
-  speed.show();
-  speed.overheat();
   
   enterprise.show();
   enterprise.move();
@@ -62,14 +59,17 @@ public void draw(){
   for(int i = 0; i < roids.size(); i++){
     roids.get(i).show();
     roids.get(i).move();
-    
   }//roids for loop end move and show
   
   for(int i = 0; i < roids.size(); i++){
-    if(dist((float)roids.get(i).myCenterX, (float)roids.get(i).myCenterY, (float)enterprise.myCenterX, (float)enterprise.myCenterY)<10){
+    if(dist((float)roids.get(i).myCenterX, (float)roids.get(i).myCenterY, (float)enterprise.myCenterX, (float)enterprise.myCenterY)<20){
       roids.remove(i);
     }//distance check end
   }//roids for loop end distance check
+  
+  speed.setSpeedBar();
+  speed.show();
+  speed.overheat();
   
   }//game over check end
 }
