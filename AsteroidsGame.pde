@@ -1,6 +1,7 @@
 Spaceship enterprise;
 Star[] stars;
 SpeedBar speed;
+HealthBar health;
 ArrayList <Asteroid> roids;
 
 boolean accelerateB = false;
@@ -24,6 +25,7 @@ public void setup(){
   }
   
   speed = new SpeedBar(20, 20, 0,100,30);
+  health = new HealthBar(20, 50, 0,100,0);
 }
 
 public void draw(){
@@ -64,12 +66,16 @@ public void draw(){
   for(int i = 0; i < roids.size(); i++){
     if(dist((float)roids.get(i).myCenterX, (float)roids.get(i).myCenterY, (float)enterprise.myCenterX, (float)enterprise.myCenterY)<20){
       roids.remove(i);
+      health.setHealth(health.getHealth()-8);
     }//distance check end
   }//roids for loop end distance check
   
   speed.setSpeedBar();
   speed.show();
   speed.overheat();
+
+  health.gameOver();
+  health.show();
   
   }//game over check end
 }
