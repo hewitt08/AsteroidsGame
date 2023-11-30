@@ -80,7 +80,7 @@ public void draw(){
   }else{//game on end
     fill(255,255,255);
     textSize(80);
-    text("GAME OVER", 20,200);
+    text("GAME OVER", 10,200);
   }//game over else end
 }
 
