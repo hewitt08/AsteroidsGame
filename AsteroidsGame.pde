@@ -14,7 +14,7 @@ public void setup(){
   enterprise = new Spaceship();
   speed = new SpeedBar(20, 20, 0,100,30);
   
-  roids = new ArrayList <Asteroid>();
+  roids = new ArrayList <Asteroid> ();
   for(int i = 0; i < 10; i++)
     roids.add(new Asteroid());
   
