@@ -77,7 +77,11 @@ public void draw(){
   health.gameOver();
   health.show();
   
-  }//game over check end
+  }else{//game on end
+    fill(255,255,255);
+    textSize(80);
+    text("GAME OVER", 20,200);
+  }//game over else end
 }
 
 public void keyPressed(){
