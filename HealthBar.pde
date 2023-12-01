@@ -12,6 +12,8 @@ class HealthBar extends Bar{
      if(myMeasure<0){
        game = false;
      }
+     myG = (int)(100-(100-myMeasure));
+     myR = (int)(100-myMeasure)*2;
    }
    
    public void setHealth(double m){
