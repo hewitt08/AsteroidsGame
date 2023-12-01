@@ -67,6 +67,7 @@ public void draw(){
     if(dist((float)roids.get(i).myCenterX, (float)roids.get(i).myCenterY, (float)enterprise.myCenterX, (float)enterprise.myCenterY)<20){
       roids.remove(i);
       health.setHealth(health.getHealth()-5);
+      i--;
     }//distance check end
   }//roids for loop end distance check
   
