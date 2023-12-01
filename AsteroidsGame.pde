@@ -44,10 +44,10 @@ public void draw(){
     enterprise.accelerate(0.5);
   }
   if(aTurn == true){
-    enterprise.turn(10);
+    enterprise.turn(-10);
   }
   if(dTurn == true){
-    enterprise.turn(-10);
+    enterprise.turn(10);
   }
   }else{//control check end
     enterprise.turn(-2);
