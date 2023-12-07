@@ -22,7 +22,7 @@ public boolean firedR = false;
 public int rechargeR = 0;
 
 public void setup(){
-  size(100,100);
+  size(1000,500);
     
   enterprise = new Spaceship();
   
