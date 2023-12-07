@@ -1,6 +1,6 @@
 class Spaceship extends Floater  
 {   
-    Spaceship(){
+    public Spaceship(){
       corners = 4;  //the number of corners, a triangular floater has 3
       
       xCorners = new int[corners];
@@ -16,14 +16,15 @@ class Spaceship extends Floater
       yCorners[3] = 10;
       
       myColor = color(255,0,0);
-      myCenterX = myCenterY = 250; //holds center coordinates   
+      myCenterX = width/2;
+      myCenterY = height/2;
       myXspeed = myYspeed = 0; //holds the speed of travel in the x and y directions   
       myPointDirection = 0; //holds current direction the ship is pointing in degrees    
     }
     
     public void hyperspace(){
-      myCenterX = (int)(Math.random()*500);
-      myCenterY = (int)(Math.random()*500);
+      myCenterX = (int)(Math.random()*width);
+      myCenterY = (int)(Math.random()*height);
       myPointDirection = (int)(Math.random()*360);
       myXspeed = myYspeed = 0;
     }
@@ -36,11 +37,23 @@ class Spaceship extends Floater
       return myYspeed;
     }
     
+    public double getCenterY(){
+      return myCenterY;
+    }
+    
+    public double getCenterX(){
+      return myCenterX;
+    }
+    
     public void setXspeed(int x){
       myXspeed = x;
     }
     
     public void setYspeed(int y){
       myYspeed = y;
+    }
+    
+    public double getDir(){
+      return myPointDirection;
     }
 }
