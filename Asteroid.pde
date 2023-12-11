@@ -32,6 +32,10 @@ class Asteroid extends Floater{
     myColor = color(100,100,100);
     myCenterX = Math.random()*width;
     myCenterY = Math.random()*height;
+    while(dist((float)myCenterX, (float)myCenterY, (float)enterprise.getCenterX(), (float)enterprise.getCenterY())<20){
+      myCenterX = Math.random()*width;
+      myCenterY = Math.random()*height;
+    }
     myXspeed = Math.random()*2-1;
     myYspeed = Math.random()*2-1;
     myPointDirection = 0; //holds current direction the ship is pointing in degrees    
