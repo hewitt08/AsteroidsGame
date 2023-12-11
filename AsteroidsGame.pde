@@ -20,6 +20,7 @@ public int ammoB = 200;
 public int ammoR = 3;
 public boolean firedR = false;
 public int rechargeR = 0;
+public int score = 0;
 
 public void setup(){
   size(1000,500);
@@ -134,6 +135,7 @@ public void draw(){
     for(int j = 0; j < roids.size(); j++){
       if(dist((float)bullets.get(i).myX, (float)bullets.get(i).myY, (float)roids.get(j).myCenterX, (float)roids.get(j).myCenterY)<20){
         roids.remove(j);
+        score++;
         bullets.remove(i);
         break;
       }//distance check end
@@ -144,6 +146,7 @@ public void draw(){
     for(int j = 0; j < roids.size(); j++){
       if(dist((float)rockets.get(i).myX, (float)rockets.get(i).myY, (float)roids.get(j).myCenterX, (float)roids.get(j).myCenterY)<rockets.get(i).mySize-80){
         roids.remove(j);
+        score++;
         break;
       }//distance check end
     }//roids for loop end
@@ -171,6 +174,7 @@ public void draw(){
     fill(255,255,255);
     textSize(80);
     text("GAME OVER", width/2-230,height/2-80);
+    text("Score: " + score, width/2-210, height/2);
   }//game over else end
 }
 
