@@ -20,10 +20,8 @@ class Bullet extends Floater{
     ellipse((float)myX,(float)myY,8,8);
   }//show end
   
-  public void fire(){
-    //convert the current direction the floater is pointing to radians    
+  public void fire(){//I'm not using the floater's "move" to avoid having the bullets wrap around the screen
     double mRadians = myDir*(Math.PI/180);
-    //change coordinates of direction of travel
     myX += Math.cos(mRadians)*mySpeed;
     myY += Math.sin(mRadians)*mySpeed;
   }//fire end
